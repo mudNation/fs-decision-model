@@ -67,7 +67,9 @@ const Home = () => {
 
                 {
                     downloading ? <p className="loading">Loading....</p> : 
-                    modelList?.map((model, index) => (
+
+                    modelList?.length === 0 ? <p className="loading">No Models Created</p> : 
+                    modelList?.map((model) => (
                         <div className="row" onClick={() => handleModelClick(JSON.stringify(model))} key={model.id}>
                             <p>{model.name}</p>
                             <p>{model.description}</p>
