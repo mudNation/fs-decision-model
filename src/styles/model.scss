@@ -1,0 +1,255 @@
+@import "./gen";
+
+.modelContent{
+    width: 1200px; 
+    margin: 80px auto; 
+
+    .buttonContainer{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        align-items: center;
+
+        i{
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        button:first-child{
+            margin-right: 10px; 
+        }
+
+        button{
+            @extend .button; 
+            width: 150px;
+            text-align: center;
+        }
+    }
+
+    .title{
+        margin: 0px; 
+    }
+
+    .subText{
+        margin: 10px 0px 0px 0px; 
+        font-size: 12px; 
+    }
+
+    .container{
+        box-shadow: 3px 5px 20px rgba(0,0,0,.04);
+        width: 100%;
+        padding: 30px; 
+        box-sizing: border-box;
+        background-color: white;
+
+        .settingsRow{
+            display: flex;
+            margin-top: 30px; 
+
+            .fieldHolder{
+                display: flex; 
+                flex-direction: column;
+
+                span{
+                    color: red; 
+                }
+
+                input{
+                    padding: 16px; 
+                    margin-top: 5px;
+                    border-radius: 5px;
+                    border: 1px solid rgba(84,95,125,.15);
+                }
+            }
+
+            .fieldHolder:first-child{
+                flex: 2; 
+                margin-right: 30px; 
+            }
+
+            .fieldHolder:nth-child(2){
+                flex: 3; 
+            }
+        }
+
+        button{
+            @extend .button; 
+            margin-top: 20px;
+        }
+    }
+
+
+    .secondContainer{
+        margin-top: 50px; 
+        margin-bottom: 50px;
+        box-shadow: none;
+        // background-color: none;
+
+        .addSection{
+            display: flex;
+            justify-content: space-between;
+
+            .addContainer{
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .right{
+                    margin-right: 10px;
+                }
+
+                .addSelectHolder{
+                    label{
+                        position: absolute;
+                        // color: brown; 
+                        font-size: 12px; 
+                        top: -15px; 
+                    }
+                }
+
+                button{
+                    @extend .button; 
+                    padding: 10px; 
+                    font-size: 12px; 
+                    margin-right: 10px; 
+                }
+            }
+        }
+
+        .modelContainer{
+            display: flex;
+            flex-direction: column;
+            padding: 20px 40px; 
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 3px 5px 20px rgba(0,0,0,.04);
+            // background-color: blue;
+
+            h5{
+                margin: 0px 0px 20px 0px;
+            }
+
+
+            .modelFieldHolder{
+                display: flex;
+                flex-direction: column;
+                
+
+                label{
+                    font-size: 14px; 
+                }
+    
+                input[type="text"], input[type='number']{
+                    padding: 10px; 
+                    box-sizing: border-box;
+                    width: 100%; 
+                    border-radius: 5px;
+                    border: 1px solid rgba(84,95,125,.15);
+                }
+
+                .css-b62m3t-container{
+                    width: 100%; 
+                }
+            }
+
+            .modelFieldHolder:not(:last-child){
+                margin-bottom: 10px;
+            }
+            
+        }
+
+        .controls{
+            display: flex;
+            justify-content: space-between;
+            // background-color: blue;
+            align-items: center;
+            margin-bottom: 10px;
+
+            p{
+                margin: 0px
+            }
+
+            .controlsSelect{
+                .css-qbdosj-Input{
+                    font-size: 10px;
+                }
+            }
+
+            button{
+                @extend .button;
+                margin: 0px; 
+                padding: 10px; 
+                font-size: 12px;
+            }
+        }
+
+        
+    }
+}
+
+
+@media only screen and (max-width: 1250px) {
+    .modelContent{
+        width: 1000px; 
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .modelContent{
+        width: 800px; 
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .modelContent{
+        width: 90%; 
+
+        .container{
+            .settingsRow{
+                flex-direction: column;
+
+                .fieldHolder:first-child{ 
+                    margin: 0px 0px 15px 0px; 
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .secondContainer{
+        .addSection{
+            flex-direction: column;
+            
+            .addFirstDiv{
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 620px){
+    .secondContainer{
+
+        .modelContainer{
+            .controls{
+                flex-direction: column;
+                align-items: flex-start;
+
+                .index, .controlsSelect{
+                    margin-bottom: 10px;
+                }
+
+                .controlsSelect, button{
+                    width: 100%;
+                }
+
+                button{
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
