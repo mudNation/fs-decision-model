@@ -222,8 +222,8 @@ const Model = () => {
 
             const position = parseInt(addModulePosition.value); 
             const defaultModels = DEFAULT_MODEL as ModelList; 
-            const newModule = defaultModels[addModuleOption.value || ''];
-            let tempModel = model; 
+            const newModule = structuredClone(defaultModels[addModuleOption.value || '']);
+            let tempModel = structuredClone(model); 
             let modelList = tempModel.model_list; 
 
             for(let i = Object.keys(modelList || '').length;  i >= position; i--){
@@ -247,7 +247,7 @@ const Model = () => {
 
             setAddModuleOption({value: '', label:'Select...'}); 
             setAddModulePosition({value: '', label:'Select...'}); 
-            setModel({...tempModel})
+            setModel(structuredClone(tempModel))
         }
     }
 
