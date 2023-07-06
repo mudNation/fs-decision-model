@@ -36,7 +36,9 @@ const Model = () => {
 
             setModel(JSON.parse(id || "{}")); 
         }else{
-            const modelList = {...DEFAULT_MODEL}; 
+
+            const modelList = structuredClone(DEFAULT_MODEL); 
+            console.log(modelList); 
             const tempModel: ModelType = {
                 name: '', 
                 description: '', 
@@ -117,6 +119,7 @@ const Model = () => {
 
     const addOptions = getAddOptions(); 
     const lengthOptions = getModuleLengthOptions(); 
+    const moduleLengthOption = lengthOptions.filter((length) => length.value !== lengthOptions.length.toString())
 
     const sortedModel:ModelList | undefined = getSortedModel(); 
 
@@ -187,7 +190,7 @@ const Model = () => {
     const handleDeleteModule = (module: string) => {
         if(model !== undefined){
             
-            let tempModel = model; 
+            let tempModel = structuredClone(model); 
             const sequence = tempModel.model_list[module].sequence; 
 
             tempModel.model_list[module] = undefined;
@@ -206,7 +209,7 @@ const Model = () => {
             }
 
             tempModel = {...tempModel, model_list: modelList, modules: tempModel.modules-1}
-            setModel({...tempModel})
+            setModel(structuredClone(tempModel))
         }
     }
 
@@ -331,7 +334,7 @@ const Model = () => {
                         </button> : ''
                     }
                     
-                    <button onClick={handleCreateModel}>{!createLoading ? buttonText + "MODEL" : "..."}</button>
+                    <button onClick={handleCreateModel}>{!createLoading ? buttonText + " MODEL" : "..."}</button>
                 </div>
                 
             </div>
@@ -393,13 +396,13 @@ const Model = () => {
                             return ''; 
                         }
                         return (
-                        <div className="modelContainer">
+                        <div className="modelContainer" >
                             <div className="controls">
                                 <p className="index">#{index+1}</p>
 
                                 <div className="controlsSelect">
                                     <p>Move To Position</p>
-                                    <Select options={lengthOptions} value ={{label: "Select...", value: ""}}
+                                    <Select options={moduleLengthOption} value ={{label: "Select...", value: ""}}
                                         onChange={(value) => handlePositionChange(value as OptionValue, m, index)}/>
                                 </div>
 
