@@ -370,14 +370,14 @@ const Model = () => {
                         addOptions?.length !== 0 ? 
                         <div className="addContainer">
                             <button onClick={handleAddModuleClick}>Add Module</button>
-                            <div className="addSelectHolder right">
+                            <div className="addSelectHolder firstHolder right">
                                 <label>Select Module</label>
                                 <Select options={addOptions} className="selectClass" 
                                     value={addModuleOption}
                                     onChange={(value) => setAddModuleOption(value || undefined)} />
                             </div>
 
-                            <div className="addSelectHolder">
+                            <div className="addSelectHolder secondHolder">
                                 <label>Select Position</label>
                                 <Select options={lengthOptions} className="selectClass" 
                                     value={addModulePosition}

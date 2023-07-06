@@ -101,10 +101,17 @@
                 .addSelectHolder{
                     label{
                         position: absolute;
-                        // color: brown; 
                         font-size: 12px; 
                         top: -15px; 
                     }
+                }
+
+                .firstHolder{
+                    width: 130px; 
+                }
+
+                .secondHolder{
+                    width: 120px; 
                 }
 
                 button{
@@ -217,11 +224,11 @@
     }
 }
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 750px){
     .secondContainer{
         .addSection{
             flex-direction: column;
-            
+    
             .addFirstDiv{
                 margin-bottom: 40px;
             }
@@ -231,24 +238,116 @@
 
 
 @media only screen and (max-width: 620px){
-    .secondContainer{
+    .modelContent{
+        .secondContainer{
 
-        .modelContainer{
-            .controls{
-                flex-direction: column;
-                align-items: flex-start;
-
-                .index, .controlsSelect{
-                    margin-bottom: 10px;
+            .modelContainer{
+                padding: 20px 20px; 
+    
+                .controls{
+                    flex-direction: column;
+                    align-items: flex-start;
+    
+                    .index, .controlsSelect{
+                        margin-bottom: 10px;
+                    }
+    
+                    .controlsSelect, button{
+                        width: 100%;
+                    }
+    
+                    button{
+                        margin-bottom: 15px;
+                    }
                 }
+            }
+        }
+    }
+    
+}
 
-                .controlsSelect, button{
-                    width: 100%;
-                }
+@media only screen and (max-width: 500px){
+    .modelContent{
+        .buttonContainer{
+           
+            i{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            
+            button:first-child{
+                margin-right: 10px; 
+            }
+    
+            button{
+                width: 120px;
+                padding: 10px; 
+                font-size: 12px; 
+            }
+        }
+    }
+}
 
-                button{
-                    margin-bottom: 15px;
+@media only screen and (max-width: 420px){
+    .modelContent{
+        .secondContainer{
+            .addSection{
+                .addContainer{
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: start;
+                    width: 100%; 
+    
+                    .right{
+                        margin-right: 0px;
+                    }
+    
+                    button, .firstHolder, .secondHolder{
+                        width: 100%; 
+                        margin-right: 0px;
+                        align-self: flex-start;
+                    }
+
+                    button, .firstHolder{
+                        margin-bottom: 10px;
+                    }
+    
+                    .addSelectHolder{
+                        label{
+                            position: absolute;
+                            font-size: 12px; 
+                            top: -15px; 
+                            display: none;
+                        }
+                    }
+    
                 }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 350px){
+    .modelContent{
+        .buttonContainer{
+            flex-direction: column;
+           
+            i{
+                font-size: 20px;
+                cursor: pointer;
+                align-self: flex-start;
+                margin-bottom: 20px;
+            }
+            
+            button:first-child{
+                margin-right: 10px; 
+            }
+    
+            button{
+                width: 120px;
+                padding: 10px; 
+                font-size: 12px; 
             }
         }
     }
